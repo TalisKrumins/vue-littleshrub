@@ -4,9 +4,9 @@ import HorizontalTeamCard from "@/examples/cards/teamCards/HorizontalTeamCard.vu
 
 // images
 import sj from "@/assets/img/pages/section_j.jpg";
-import william from "@/assets/img/bruce-mars.jpg";
-import ivana from "@/assets/img/ivana-squares.jpg";
-import marquez from "@/assets/img/ivana-square.jpg";
+// import william from "@/assets/img/bruce-mars.jpg";
+// import ivana from "@/assets/img/ivana-squares.jpg";
+// import marquez from "@/assets/img/ivana-square.jpg";
 </script>
 
 <template>
