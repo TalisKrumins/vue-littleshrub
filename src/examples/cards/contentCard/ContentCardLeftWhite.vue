@@ -51,16 +51,23 @@ export default {
         >{{ typeof icon == "object" ? icon.component : icon }}</i
       >
       <img v-if="image" :src="image.component" :class="image.class" />
-      <h5
+      <h2
         :class="
           typeof title == 'string' ? 'font-weight-bolder mt-3' : title.class
         "
       >
         {{ typeof title == "string" ? title : title.text }}
-      </h5>
-      <p :class="typeof description == 'string' ? 'pe-0' : description.class">
-        {{ typeof description == "string" ? description : description.text }}
-      </p>
+      </h2>
+      <p
+        v-if="typeof description == 'string'"
+        class="pe-0"
+        v-html="description.replace(/\n/g, '<br>')"
+      ></p>
+      <p
+        v-else
+        :class="description.class"
+        v-html="description.text.replace(/\n/g, '<br>')"
+      ></p>
     </div>
   </div>
 </template>

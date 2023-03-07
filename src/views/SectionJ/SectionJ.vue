@@ -11,11 +11,12 @@ import { onMounted, onUnmounted } from "vue";
 //dep
 import Typed from "typed.js";
 
+//image
+import bg0 from "@/assets/img/city-profile.jpg";
+
 //sections
-import Information from "./Sections/AboutInformation.vue";
-import AboutTeam from "./Sections/AboutTeam.vue";
-import Featuring from "./Sections/AboutFeaturing.vue";
-import Newsletter from "./Sections/AboutNewsletter.vue";
+import Information from "./Sections/Content.vue";
+
 import MaterialButton from "@/components/MaterialButton.vue";
 
 const body = document.getElementsByTagName("body")[0];
@@ -47,8 +48,7 @@ onUnmounted(() => {
     <div
       class="page-header min-vh-100"
       :style="{
-        backgroundImage:
-          'url(https://images.unsplash.com/photo-1520769945061-0a448c463865?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)',
+        backgroundImage: `url(${bg0})`,
       }"
       loading="lazy"
     >
@@ -77,12 +77,7 @@ onUnmounted(() => {
     </div>
   </header>
 
-  <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
-    <Information />
-    <AboutTeam />
-    <Featuring />
-    <Newsletter />
-    <AboutTeam />
+  <div class="card card-body shadow-xl mx-3 mx-md-8 mt-n6">
     <Information />
   </div>
   <DefaultFooter />
