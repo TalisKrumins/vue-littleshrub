@@ -4,7 +4,7 @@
       <li v-for="(children, parent) in menu" :key="parent">
         {{ parent }}
         <ul>
-          <li v-for="child in children" :key="child">
+          <li v-for="child in children" :key="child" @click="goToRoute(child)">
             {{ child }}
           </li>
         </ul>
@@ -15,15 +15,19 @@
 </template>
 
 <script>
+import { menu } from "./router/index.js";
+
 export default {
   name: "App",
   data() {
-    const router = require("./router").default;
-    const menu = router.menu;
-    console.log(menu); // console log the menu constant to check if it's being imported correctly
     return {
-      menu,
+      menu: menu,
     };
+  },
+  methods: {
+    goToRoute(routeName) {
+      this.$router.push({ name: routeName });
+    },
   },
 };
 </script>
@@ -38,14 +42,86 @@ export default {
 
 nav {
   padding: 30px;
+  background-color: #000;
+  color: #fff;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  margin-right: 20px;
+  font-size: 16px;
 }
 
 nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+nav a:hover {
+  color: #999;
+}
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #222;
+  min-width: 200px;
+}
+
+nav ul ul li {
+  display: block;
+  margin: 0;
+  font-size: 14px;
+  padding: 10px;
+}
+
+nav ul ul li:hover {
+  background-color: #333;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+nav ul li {
+  position: relative;
+}
+
+nav ul li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  list-style: none;
+  padding-left: 0;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul li ul li {
+  width: 100%;
+}
+
+nav ul li ul li a {
+  display: block;
+  padding: 10px;
+  background-color: #f8f8f8;
+  color: #333;
+  text-decoration: none;
+}
+
+nav ul li ul li a:hover {
+  background-color: #e8e8e8;
 }
 </style>

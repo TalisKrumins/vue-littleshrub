@@ -36,8 +36,7 @@ const router = createRouter({
   routes,
 });
 
-const menu = createMenuObject(routes);
+export const menu = createMenuObject(routes);
 console.log(menu);
-export { menu };
 
 export default router;
