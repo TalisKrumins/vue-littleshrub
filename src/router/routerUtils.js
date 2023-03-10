@@ -1,11 +1,17 @@
 export function createMenuObject(routes) {
-  const menuObject = {};
+  const menu = {};
   routes.forEach((route) => {
-    const parent = route.parent[0];
-    if (!menuObject[parent]) {
-      menuObject[parent] = [];
+    if (route.parent.length === 0) {
+      menu[route.name] = [];
+    } else {
+      const parent = route.parent[0];
+      const child = { name: route.name, path: route.path };
+      if (!menu[parent]) {
+        menu[parent] = [child];
+      } else {
+        menu[parent].push(child);
+      }
     }
-    menuObject[parent].push(route.name);
   });
-  return menuObject;
+  return menu;
 }

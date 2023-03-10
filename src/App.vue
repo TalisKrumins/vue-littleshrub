@@ -1,11 +1,13 @@
 <template>
   <nav>
     <ul>
-      <li v-for="(children, parent) in menu" :key="parent">
-        {{ parent }}
+      <li v-for="(children, parent) in menu" :key="parent" class="parent-item">
+        <span class="parent-link">{{ parent }}</span>
         <ul>
-          <li v-for="child in children" :key="child" @click="goToRoute(child)">
-            {{ child }}
+          <li v-for="child in children" :key="child.name">
+            <router-link :to="child.path" class="child-link">{{
+              child.name
+            }}</router-link>
           </li>
         </ul>
       </li>
@@ -41,9 +43,9 @@ export default {
 }
 
 nav {
-  padding: 30px;
   background-color: #000;
   color: #fff;
+  padding: 0;
 }
 
 nav ul {
@@ -52,6 +54,17 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
+}
+
+nav > ul {
+  flex-wrap: wrap;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  max-height: 0;
+}
+
+nav:hover > ul {
+  max-height: 300px;
 }
 
 nav li {
