@@ -36,7 +36,7 @@ import questions from "@/assets/img/pages/more_questions.jpg";
             :image="jv3"
             :profile="{ name: 'JV3 Assessments', link: 'jv3' }"
             :position="{ label: 'Commercial', color: 'success' }"
-            description="As a service, a JV3 report is a performance solution to a Section J Report in Australia, which utilises computer modelling to demonstrate compliance with the National Construction Code (NCC) energy efficiency standards for commercial building projects.<br><br>"
+            description="As a service, a JV3 report is a performance solution to a Section J Report in Australia, which utilises computer modelling to demonstrate compliance with the National Construction Code (NCC) energy efficiency standards for commercial building projects."
           />
         </div>
       </div>
