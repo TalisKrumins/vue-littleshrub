@@ -25,7 +25,7 @@ defineProps({
 </script>
 <template>
   <div
-    class="front front-background"
+    class="front-background"
     :style="{
       backgroundImage: `url(${image})`,
       backgroundSize: 'cover',

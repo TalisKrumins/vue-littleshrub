@@ -25,7 +25,7 @@ import questions from "@/assets/img/pages/more_questions.jpg";
           <HorizontalTeamCard
             class="mt-4"
             :image="sj"
-            :profile="{ name: 'Section J Reports', link: 'javascript:;' }"
+            :profile="{ name: 'Section J Reports', link: 'section-j' }"
             :position="{ label: 'Commercial', color: 'success' }"
             description="We offer Section J Report services in Australia to help commercial building owners and designers demonstrate their compliance with the minimum energy efficiency standards set by the Building Code of Australia, ensuring that their building projects are environmentally sustainable and cost-effective in the long term."
           />
@@ -34,9 +34,9 @@ import questions from "@/assets/img/pages/more_questions.jpg";
           <HorizontalTeamCard
             class="mt-lg-4 mt-5"
             :image="jv3"
-            :profile="{ name: 'JV3 Assessments', link: 'javascript:;' }"
+            :profile="{ name: 'JV3 Assessments', link: 'jv3' }"
             :position="{ label: 'Commercial', color: 'success' }"
-            description="As a service, a JV3 report is a performance solution to a Section J Report in Australia, which utilises computer modelling to demonstrate compliance with the National Construction Code (NCC) energy efficiency standards for commercial building projects."
+            description="As a service, a JV3 report is a performance solution to a Section J Report in Australia, which utilises computer modelling to demonstrate compliance with the National Construction Code (NCC) energy efficiency standards for commercial building projects.<br><br>"
           />
         </div>
       </div>
@@ -45,7 +45,7 @@ import questions from "@/assets/img/pages/more_questions.jpg";
           <HorizontalTeamCard
             class="mt-4 z-index-2"
             :image="nathers"
-            :profile="{ name: 'NatHERS Assesments', link: 'javascript:;' }"
+            :profile="{ name: 'NatHERS Assesments', link: 'nathers' }"
             :position="{ label: 'Residential', color: 'success' }"
             description="As a service, a NatHERS assessment is a rating system used in Australia to assess the energy efficiency of residential building designs, helping to reduce greenhouse gas emissions and promote sustainable housing design."
           />

@@ -6,14 +6,14 @@ import { onMounted, onUnmounted } from "vue";
 // import DefaultFooter from "../../../examples/footers/FooterDefault.vue";
 
 //image
-import bg0 from "@/assets/img/bg9.jpg";
+import bg0 from "@/assets/img/vue-mk-header.jpg";
 
 //dep
 import Typed from "typed.js";
 
 //sections
 import Information from "./Sections/HomeInformation.vue";
-import AboutTeam from "./Sections/Services.vue";
+import Services from "./Sections/Services.vue";
 import Featuring from "./Sections/HomeFeaturing.vue";
 import ContactUs from "../.././components/Forms/ContactUs.vue";
 
@@ -74,9 +74,9 @@ onUnmounted(() => {
     </div>
   </header>
   <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
-    <Information />
-    <AboutTeam />
     <Featuring />
+    <Information />
+    <Services />
     <ContactUs />
   </div>
   <DefaultFooter />
