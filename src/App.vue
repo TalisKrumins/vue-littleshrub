@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav-bar>
     <ul>
       <li v-for="(children, parent) in menu" :key="parent" class="parent-item">
         <span class="parent-link">{{ parent }}</span>
@@ -12,7 +12,7 @@
         </ul>
       </li>
     </ul>
-  </nav>
+  </nav-bar>
   <router-view />
 </template>
 
@@ -42,99 +42,66 @@ export default {
   color: #2c3e50;
 }
 
-nav {
-  background-color: #000;
-  color: #fff;
-  padding: 0;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-}
-
-nav > ul {
-  flex-wrap: wrap;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  max-height: 0;
-}
-
-nav:hover > ul {
-  max-height: 300px;
-}
-
-nav li {
-  margin-right: 20px;
-  font-size: 16px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-nav a:hover {
-  color: #999;
-}
-
-nav ul ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #222;
-  min-width: 200px;
-}
-
-nav ul ul li {
-  display: block;
-  margin: 0;
-  font-size: 14px;
-  padding: 10px;
-}
-
-nav ul ul li:hover {
-  background-color: #333;
-}
-
-nav ul li:hover > ul {
-  display: block;
-}
-nav ul li {
-  position: relative;
-}
-
-nav ul li ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: none;
-  list-style: none;
-  padding-left: 0;
-}
-
-nav ul li:hover > ul {
-  display: block;
-}
-
-nav ul li ul li {
-  width: 100%;
-}
-
-nav ul li ul li a {
-  display: block;
-  padding: 10px;
+<style > .nav-bar {
   background-color: #f8f8f8;
-  color: #333;
-  text-decoration: none;
+  border-bottom: 1px solid #e7e7e7;
+  margin-bottom: 20px;
 }
-
-nav ul li ul li a:hover {
-  background-color: #e8e8e8;
+.nav-bar .navbar-brand {
+  color: #777;
+}
+.nav-bar .navbar-brand:hover,
+.nav-bar .navbar-brand:focus {
+  color: #5e5e5e;
+}
+.nav-bar .navbar-nav > li > a {
+  color: #777;
+}
+.nav-bar .navbar-nav > li > a:hover,
+.nav-bar .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: transparent;
+}
+.nav-bar .navbar-nav > .active > a,
+.nav-bar .navbar-nav > .active > a:hover,
+.nav-bar .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+.nav-bar .navbar-nav > .open > a,
+.nav-bar .navbar-nav > .open > a:hover,
+.nav-bar .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+.nav-bar .navbar-nav > .dropdown > a:hover .caret {
+  border-top-color: #777;
+  border-bottom-color: #777;
+}
+.nav-bar .navbar-nav > .dropdown > a .caret {
+  border-top-color: #555;
+  border-bottom-color: #555;
+}
+.nav-bar .navbar-nav .open .dropdown-menu {
+  background-color: #e7e7e7;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin-top: 2px;
+  width: auto;
+}
+.nav-bar .navbar-nav .open .dropdown-menu > li > a {
+  color: #777;
+  padding: 5px 15px;
+}
+.nav-bar .navbar-nav .open .dropdown-menu > li > a:hover,
+.nav-bar .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: #333;
+  background-color: transparent;
+}
+.nav-bar .navbar-nav .open .dropdown-menu > .active > a,
+.nav-bar .navbar-nav .open .dropdown-menu > .active > a:hover,
+.nav-bar .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #555;
 }
 </style>
