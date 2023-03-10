@@ -1,10 +1,6 @@
 <script setup>
 import { onMounted, onUnmounted } from "vue";
 
-//example components
-// import DefaultNavbar from "../../../examples/navbars/NavbarDefault.vue";
-// import DefaultFooter from "../../../examples/footers/FooterDefault.vue";
-
 //image
 import bg0 from "@/assets/img/vue-mk-header.jpg";
 
@@ -42,14 +38,6 @@ onUnmounted(() => {
 });
 </script>
 <template>
-  <DefaultNavbar
-    :action="{
-      route: 'javascript:;',
-      label: 'Buy Now',
-      color: 'btn-white',
-    }"
-    transparent
-  />
   <header class="bg-gradient-dark">
     <div
       class="page-header min-vh-75"
@@ -79,5 +67,4 @@ onUnmounted(() => {
     <Services />
     <ContactUs />
   </div>
-  <DefaultFooter />
 </template>

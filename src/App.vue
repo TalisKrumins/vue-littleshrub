@@ -1,12 +1,32 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/section-j">Section J Reports</router-link> |
-    <router-link to="/content">Content</router-link>
+    <ul>
+      <li v-for="(children, parent) in menu" :key="parent">
+        {{ parent }}
+        <ul>
+          <li v-for="child in children" :key="child">
+            {{ child }}
+          </li>
+        </ul>
+      </li>
+    </ul>
   </nav>
   <router-view />
 </template>
 
+<script>
+export default {
+  name: "App",
+  data() {
+    const router = require("./router").default;
+    const menu = router.menu;
+    console.log(menu); // console log the menu constant to check if it's being imported correctly
+    return {
+      menu,
+    };
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

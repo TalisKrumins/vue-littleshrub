@@ -26,7 +26,6 @@ export default {
   },
   mounted() {
     this.getDivIds();
-    console.log(this.divIds);
 
     for (let i = 0; i < this.divIds.length; i++) {
       if (this.divIds[i].originalId == "") {
@@ -34,7 +33,6 @@ export default {
         i--; // Update the index since the array was modified
       }
     }
-    console.log(this.divIds);
   },
 
   methods: {

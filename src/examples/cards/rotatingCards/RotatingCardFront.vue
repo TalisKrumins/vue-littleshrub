@@ -29,6 +29,10 @@ defineProps({
     :style="{
       backgroundImage: `url(${image})`,
       backgroundSize: 'cover',
+      backgroundPosition: 'center' /* Add the backgroundPosition property */,
+      height: '300px',
+      width: '100%',
+      borderRadius: '10px',
     }"
   >
     <div class="card-body py-7 text-center">
