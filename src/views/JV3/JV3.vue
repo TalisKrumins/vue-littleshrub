@@ -63,7 +63,7 @@ export default {
           <div
             class="col-lg-6 col-md-7 d-flex justify-content-center flex-column left"
           >
-            <h1 class="text-white mb-4">Section J Reports</h1>
+            <h1 class="text-white mb-4">JV3 Assessments</h1>
             <p class="text-white opacity-8 lead pe-5 me-5">
               Find out what Section J reports are and how we can help you
             </p>
